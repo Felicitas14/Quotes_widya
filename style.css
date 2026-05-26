@@ -1128,29 +1128,28 @@ body.dark-theme .input-group select option {
     
     }
 
-    /* TOP LIKE ACTIVE */
-    .liked-top{
-    
-    background:
-    linear-gradient(
-    135deg,
-    #ff5ca8,
-    #ff2f86
-    ) !important;
+   /* LIKE ACTIVE */
+    .like-btn.liked-top{
     
     color:
-    white !important;
+    #ff4f9f !important;
+    
+    background:
+    rgba(255,255,255,.55) !important;
+    
+    border:
+    1px solid rgba(255,255,255,.18);
     
     box-shadow:
-    0 6px 18px rgba(
+    0 4px 12px rgba(
     255,
-    80,
-    150,
-    .35
+    255,
+    255,
+    .08
     );
     
     }
     
-    .liked-top i{
-    color:white !important;
+    .like-btn.liked-top i{
+    color:#ff4f9f !important;
     }
