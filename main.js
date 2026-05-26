@@ -796,20 +796,42 @@ quotesDb[currentMood]
 
 if(!quote) return;
 
+const quoteId =
+`${currentMood}_${quote.text.substring(0,15)}`;
+
+if(likedQuotes.has(quoteId)){
+
+likedQuotes.delete(quoteId);
+
+quote.likes =
+Math.max(0,(quote.likes || 1)-1);
+
+}else{
+
+likedQuotes.add(quoteId);
+
 quote.likes =
 (quote.likes || 0)+1;
+
+}
+
+/* SAVE */
+localStorage.setItem(
+'liked_quotes',
+JSON.stringify(
+Array.from(likedQuotes)
+)
+);
 
 localStorage.setItem(
 'quotes_db',
 JSON.stringify(quotesDb)
 );
 
+/* REFRESH */
 renderTopQuotes();
 
-showToast("Quote disukai 💗");
-
 }
-
 /* SAVE */
 function topSaveQuote(){
 
