@@ -349,7 +349,24 @@ function handleSwipe() {
 function selectMood(mood) {
     currentMood = mood;
     currentQuoteIndex = 0;
+    document.body.classList.remove(
+    "happy-bg",
+    "sad-bg",
+    "savage-bg"
+    );
     
+    if (mood === "Happy") {
+        document.body.classList.add("happy-bg");
+    }
+    
+    if (mood === "Sad") {
+        document.body.classList.add("sad-bg");
+    }
+    
+    if (mood === "Savage") {
+        document.body.classList.add("savage-bg");
+    }
+        
     // Update active class on nav or highlight
     if (highlightText) {
         const moodEmojis = { Happy: 'Happy 😉', Sad: 'Sad 💔', Savage: 'Savage 🔥' };
