@@ -1082,26 +1082,39 @@ body.dark-theme .input-group select option {
     }
     
     .top-quote-actions span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    
+    padding:12px 22px;
+    
+    border-radius:999px;
+    
+    background:
+    rgba(255,255,255,.16);
+    
+    border:
+    1px solid rgba(255,255,255,.12);
+    
+    color:
+    #f6b2df;
+    
+    font-size:
+    .95rem;
+    
+    font-weight:
+    600;
+    
     cursor:pointer;
-    font-size:.95rem;
-    color:var(--text-secondary);
-    transition:.25s;
-    }
     
-    .top-quote-actions span:hover{
-    color:#ff5ca8;
-    transform:scale(1.04);
-    }
+    transition:.3s ease;
     
-    /* MOBILE */
-    @media(max-width:768px){
+    min-width:120px;
     
-    .top-quotes-grid{
-    grid-template-columns:1fr;
-    }
+    backdrop-filter:
+    blur(6px);
     
-    .top-quote-card:last-child{
-    grid-column:auto;
-    }
-    
+    -webkit-backdrop-filter:
+    blur(6px);
     }
