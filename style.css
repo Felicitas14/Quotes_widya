@@ -829,57 +829,6 @@ body.dark-theme .input-group select option {
     transform: scale(1.08);
 }
 
-    /* HAPPY GLOW */
-    body.happy-bg::after {
-    
-    content: "";
-    
-    position: fixed;
-    
-    top: 0;
-    left: 0;
-    
-    width: 100%;
-    height: 100%;
-    
-    pointer-events: none;
-    
-    z-index: -2;
-    
-    background:
-    
-    radial-gradient(
-    circle,
-    rgba(255,255,255,0.35),
-    transparent 60%
-    );
-    
-    filter:
-    blur(100px);
-    
-    animation:
-    glowMove 8s ease infinite;
-    }
-    
-    @keyframes glowMove {
-    
-    0% {
-    transform:
-    translate(-10%, -10%);
-    }
-    
-    50% {
-    transform:
-    translate(10%, 10%);
-    }
-    
-    100% {
-    transform:
-    translate(-10%, -10%);
-    }
-    
-    }
-
    /* HAPPY LIGHT */
     body.happy-bg:not(.dark-theme) {
     
