@@ -722,9 +722,8 @@ container.innerHTML += `
 
 <div class="mini-quote glass-card">
 
-<p>
-#${index + 1}
-"${quote.text}"
+<p class="mini-quote-text">
+#${index + 1} "${quote.text}"
 </p>
 
 <div class="mini-quote-footer">
@@ -739,6 +738,14 @@ container.innerHTML += `
 ❤️ ${quote.likes || 0}
 </span>
 
+<span>
+📌 Save
+</span>
+
+<span>
+📤 Share
+</span>
+
 </div>
 
 </div>
@@ -746,7 +753,3 @@ container.innerHTML += `
 </div>
 
 `;
-
-});
-
-}
