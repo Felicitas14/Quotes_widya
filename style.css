@@ -1127,3 +1127,30 @@ body.dark-theme .input-group select option {
     );
     
     }
+
+    /* TOP LIKE ACTIVE */
+    .liked-top{
+    
+    background:
+    linear-gradient(
+    135deg,
+    #ff5ca8,
+    #ff2f86
+    ) !important;
+    
+    color:
+    white !important;
+    
+    box-shadow:
+    0 6px 18px rgba(
+    255,
+    80,
+    150,
+    .35
+    );
+    
+    }
+    
+    .liked-top i{
+    color:white !important;
+    }
