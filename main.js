@@ -747,7 +747,15 @@ ${crowns[index]}
 
 <div class="top-quote-actions">
 
-<span onclick="topLikeQuote('${quote.text}')">
+<span
+class="${
+likedQuotes.has(
+`${currentMood}_${quote.text.substring(0,15)}`
+)
+? 'liked-top'
+: ''
+}"
+onclick="topLikeQuote('${quote.text}')">span onclick="topLikeQuote('${quote.text}')">
 
 <i class="far fa-heart"></i>
 ${quote.likes || 0}
