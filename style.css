@@ -1041,3 +1041,111 @@ body.dark-theme .input-group select option {
     background-size:
     400% 400%;
     }
+
+    /* TOP QUOTES NEW STYLE */
+    .mini-quote {
+    
+    padding:
+    25px;
+    
+    border-radius:
+    24px;
+    
+    display:
+    flex;
+    
+    flex-direction:
+    column;
+    
+    justify-content:
+    space-between;
+    
+    min-height:
+    170px;
+    
+    transition:
+    all 0.35s ease;
+    }
+    
+    .mini-quote:hover {
+    
+    transform:
+    translateY(-6px);
+    
+    box-shadow:
+    0 15px 35px rgba(
+    255,
+    105,
+    180,
+    0.18
+    );
+    }
+    
+    .mini-quote-text {
+    
+    font-size:
+    1.2rem;
+    
+    line-height:
+    1.6;
+    
+    font-weight:
+    500;
+    
+    margin-bottom:
+    25px;
+    
+    color:
+    var(--text-primary);
+    }
+    
+    .mini-quote-footer {
+    
+    display:
+    flex;
+    
+    justify-content:
+    space-between;
+    
+    align-items:
+    center;
+    
+    gap:
+    15px;
+    
+    flex-wrap:
+    wrap;
+    }
+    
+    .mini-quote-footer .actions {
+    
+    display:
+    flex;
+    
+    gap:
+    15px;
+    
+    font-size:
+    0.9rem;
+    
+    color:
+    var(--text-secondary);
+    }
+    
+    .mini-quote-footer .actions span {
+    
+    cursor:
+    pointer;
+    
+    transition:
+    0.3s;
+    }
+    
+    .mini-quote-footer .actions span:hover {
+    
+    color:
+    #ff5ca8;
+    
+    transform:
+    scale(1.05);
+    }
