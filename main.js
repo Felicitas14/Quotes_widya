@@ -752,26 +752,14 @@ ${crowns[index]}
 
 <div class="top-quote-actions">
 
-<span>
+<span onclick="topLikeQuote('${quote.text}')">
 ❤️ ${quote.likes || 0}
 </span>
 
-<span>
+<span onclick="topSaveQuote('${quote.text}')">
 📌 Save
 </span>
 
-<span>
+<span onclick="topShareQuote('${quote.text}')">
 📤 Share
 </span>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
