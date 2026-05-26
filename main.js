@@ -681,3 +681,5 @@ function createHeartBurst() {
 
 // Initial startup render
 renderQuote();
+
+document.body.classList.add("happy-bg");
