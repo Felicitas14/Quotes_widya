@@ -694,11 +694,11 @@ document.getElementById(
 
 if (!container) return;
 
-/* ambil quotes sesuai mood aktif */
+/* Quotes sesuai mood */
 const moodQuotes =
 quotesDb[currentMood] || [];
 
-/* urut berdasarkan likes */
+/* Urut berdasarkan likes */
 const sortedQuotes =
 [...moodQuotes].sort(
 (a, b) =>
@@ -707,7 +707,7 @@ const sortedQuotes =
 (a.likes || 0)
 );
 
-/* ambil top 5 */
+/* Ambil top 5 */
 const topQuotes =
 sortedQuotes.slice(0, 5);
 
@@ -722,15 +722,6 @@ const crowns = [
 "",
 ""
 ];
-
-const quoteId =
-`${currentMood}_${quote.text.substring(0, 15)}`;
-
-const isLiked =
-likedQuotes.has(quoteId);
-
-const isSaved =
-savedQuotes.has(quoteId);
 
 container.innerHTML += `
 
@@ -760,32 +751,16 @@ ${crowns[index]}
 
 <div class="top-quote-actions">
 
-<span
-class="top-like-btn"
-onclick="topLikeQuote('${quote.text}')"
->
-
-${isLiked ? "💖" : "❤️"}
-${quote.likes || 0}
-
+<span>
+❤️ ${quote.likes || 0}
 </span>
 
-<span
-class="top-save-btn"
-onclick="topSaveQuote('${quote.text}')"
->
-
-${isSaved ? "📂 Saved" : "📌 Save"}
-
+<span>
+📌 Save
 </span>
 
-<span
-class="top-share-btn"
-onclick="topShareQuote('${quote.text}')"
->
-
+<span>
 📤 Share
-
 </span>
 
 </div>
@@ -795,126 +770,6 @@ onclick="topShareQuote('${quote.text}')"
 </div>
 
 `;
-
-});
-
-}
-
-/* TOP QUOTE ACTIONS */
-
-function topLikeQuote(text) {
-
-const quote =
-quotesDb[currentMood]
-.find(q => q.text === text);
-
-if (!quote) return;
-
-const quoteId =
-`${currentMood}_${quote.text.substring(0, 15)}`;
-
-if (likedQuotes.has(quoteId)) {
-
-likedQuotes.delete(quoteId);
-
-quote.likes =
-Math.max(
-0,
-(quote.likes || 1) - 1
-);
-
-showToast("Like dihapus 💔");
-
-} else {
-
-likedQuotes.add(quoteId);
-
-quote.likes =
-(quote.likes || 0) + 1;
-
-showToast("Quote disukai 💗");
-
-createHeartBurst();
-}
-
-localStorage.setItem(
-'liked_quotes',
-JSON.stringify(
-Array.from(likedQuotes)
-)
-);
-
-localStorage.setItem(
-'quotes_db',
-JSON.stringify(quotesDb)
-);
-
-renderTopQuotes();
-renderQuote();
-
-}
-
-/* SAVE */
-function topSaveQuote(text) {
-
-const quote =
-quotesDb[currentMood]
-.find(q => q.text === text);
-
-if (!quote) return;
-
-const quoteId =
-`${currentMood}_${quote.text.substring(0, 15)}`;
-
-if (savedQuotes.has(quoteId)) {
-
-savedQuotes.delete(quoteId);
-
-showToast(
-"Quote dihapus 📂"
-);
-
-} else {
-
-savedQuotes.add(quoteId);
-
-showToast(
-"Quote disimpan 📌"
-);
-
-}
-
-localStorage.setItem(
-'saved_quotes',
-JSON.stringify(
-Array.from(savedQuotes)
-)
-);
-
-renderTopQuotes();
-renderQuote();
-
-}
-
-/* SHARE */
-function topShareQuote(text) {
-
-const quote =
-quotesDb[currentMood]
-.find(q => q.text === text);
-
-if (!quote) return;
-
-const shareText =
-`"${quote.text}" - ${quote.author}`;
-
-navigator.clipboard.writeText(
-shareText
-).then(() => {
-
-showToast(
-"Quote berhasil disalin 📋"
-);
 
 });
 
