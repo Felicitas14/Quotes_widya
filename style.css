@@ -829,104 +829,53 @@ body.dark-theme .input-group select option {
     transform: scale(1.08);
 }
 
-    /* HAPPY VIBES */
-    body.happy-bg .quote-card {
+    /* HAPPY GLOW */
+    body.happy-bg::after {
     
-    box-shadow:
-    0 0 30px rgba(
-    255,
-    182,
-    217,
-    0.35
-    );
+    content: "";
     
-    border:
-    1px solid rgba(
-    255,
-    255,
-    255,
-    0.4
-    );
-    }
+    position: fixed;
     
-    body.happy-bg .quote-icons {
+    top: 0;
+    left: 0;
     
-    filter:
-    drop-shadow(
-    0 0 10px pink
-    );
-    }
+    width: 100%;
+    height: 100%;
     
-    /* SAD VIBES */
-    body.sad-bg .quote-card {
+    pointer-events: none;
+    
+    z-index: -2;
     
     background:
-    rgba(
-    40,
-    30,
-    60,
-    0.45
+    
+    radial-gradient(
+    circle,
+    rgba(255,255,255,0.35),
+    transparent 60%
     );
-    
-    backdrop-filter:
-    blur(18px);
-    
-    box-shadow:
-    0 0 40px rgba(
-    120,
-    120,
-    255,
-    0.15
-    );
-    }
-    
-    body.sad-bg .quote-text {
-    
-    color:
-    #f3eaff;
-    
-    text-shadow:
-    0 0 15px rgba(
-    255,
-    255,
-    255,
-    0.15
-    );
-    }
-    
-    /* SAVAGE VIBES */
-    body.savage-bg .quote-card {
-    
-    box-shadow:
-    0 0 40px rgba(
-    255,
-    50,
-    100,
-    0.25
-    );
-    
-    border:
-    1px solid rgba(
-    255,
-    100,
-    120,
-    0.2
-    );
-    }
-    
-    body.savage-bg .quote-text {
-    
-    color:
-    #ffe3ec;
-    
-    letter-spacing:
-    1px;
-    }
-    
-    body.savage-bg .quote-icons {
     
     filter:
-    drop-shadow(
-    0 0 12px crimson
-    );
+    blur(100px);
+    
+    animation:
+    glowMove 8s ease infinite;
+    }
+    
+    @keyframes glowMove {
+    
+    0% {
+    transform:
+    translate(-10%, -10%);
+    }
+    
+    50% {
+    transform:
+    translate(10%, 10%);
+    }
+    
+    100% {
+    transform:
+    translate(-10%, -10%);
+    }
+    
     }
