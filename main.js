@@ -775,3 +775,87 @@ ${crowns[index]}
 });
 
 }
+
+/* RENDER TOP 5 QUOTES - SAMA STYLE DENGAN QUOTE UTAMA */
+function renderTopQuotes() {
+
+    const container = document.getElementById("topQuotesContainer");
+
+    if (!container) return;
+
+    // Ambil semua quote dari semua kategori
+    const allQuotes = Object.values(quotesDb).flat();
+
+    // Urutkan berdasarkan likes (terbanyak ke terkecil)
+    const sortedQuotes = [...allQuotes].sort(
+        (a, b) => (b.likes || 0) - (a.likes || 0)
+    );
+
+    // Ambil top 5
+    const topQuotes = sortedQuotes.slice(0, 5);
+
+    container.innerHTML = "";
+
+    // Render Top Quotes
+    topQuotes.forEach((quote, index) => {
+
+        const rank = index + 1;
+
+        const crown =
+            rank === 1 ? "👑" :
+            rank === 2 ? "🥈" :
+            rank === 3 ? "🥉" :
+            "";
+
+        container.innerHTML += `
+
+        <div class="top-quote-card glass-card">
+
+            <div class="top-quote-header">
+
+                <div class="rank">
+                    <span class="rank-number">#${rank}</span>
+                    ${crown ? `<span class="rank-crown">${crown}</span>` : ""}
+                </div>
+
+                <div class="top-quote-crown">
+                    ${rank <= 3 ? '<i class="fas fa-crown"></i>' : ''}
+                </div>
+
+            </div>
+
+            <p class="top-quote-text">
+                "${quote.text}"
+            </p>
+
+            <p class="top-quote-author">
+                - ${quote.author}
+            </p>
+
+            <div class="top-quote-footer">
+
+                <div class="top-quote-actions">
+
+                    <span class="action-like" title="Like">
+                        ❤️ <strong>${quote.likes || 0}</strong>
+                    </span>
+
+                    <span class="action-save" title="Save">
+                        📌 Save
+                    </span>
+
+                    <span class="action-share" title="Share">
+                        📤 Share
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
