@@ -1073,48 +1073,57 @@ body.dark-theme .input-group select option {
     }
     
     /* ACTIONS */
-    .top-quote-actions{
+   .top-quote-actions{
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px;
+    gap:12px;
     }
     
     .top-quote-actions span{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:8px;
+    gap:7px;
     
-    padding:12px 22px;
+    padding:10px 18px;
     
     border-radius:999px;
     
     background:
-    rgba(255,255,255,.16);
+    rgba(255,255,255,.55);
     
     border:
-    1px solid rgba(255,255,255,.12);
+    1px solid rgba(255,255,255,.18);
     
     color:
-    #f6b2df;
+    #e8a2d3;
     
     font-size:
-    .95rem;
+    .92rem;
     
     font-weight:
     600;
     
     cursor:pointer;
     
-    transition:.3s ease;
+    transition:.28s ease;
     
-    min-width:120px;
+    width:fit-content;
     
     backdrop-filter:
-    blur(6px);
+    blur(4px);
     
     -webkit-backdrop-filter:
-    blur(6px);
+    blur(4px);
+    
+    box-shadow:
+    0 4px 12px rgba(
+    255,
+    255,
+    255,
+    .08
+    );
+    
     }
