@@ -748,15 +748,24 @@ ${crowns[index]}
 <div class="top-quote-actions">
 
 <span onclick="topLikeQuote('${quote.text}')">
-❤️ ${quote.likes || 0}
+
+<i class="far fa-heart"></i>
+${quote.likes || 0}
+
 </span>
 
 <span onclick="topSaveQuote('${quote.text}')">
-📌 Save
+
+<i class="far fa-bookmark"></i>
+Save
+
 </span>
 
 <span onclick="topShareQuote('${quote.text}')">
-📤 Share
+
+<i class="fas fa-share"></i>
+Share
+
 </span>
 
 </div>
