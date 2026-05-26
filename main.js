@@ -682,6 +682,7 @@ function createHeartBurst() {
 
 // Initial startup render
 renderQuote();
+renderTopQuotes();
 document.body.classList.add("happy-bg");
 
 /* TOP QUOTES PER MOOD */
