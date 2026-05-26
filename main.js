@@ -694,11 +694,9 @@ document.getElementById(
 
 if (!container) return;
 
-/* Quotes sesuai mood */
 const moodQuotes =
 quotesDb[currentMood] || [];
 
-/* Urut berdasarkan likes */
 const sortedQuotes =
 [...moodQuotes].sort(
 (a, b) =>
@@ -707,7 +705,6 @@ const sortedQuotes =
 (a.likes || 0)
 );
 
-/* Ambil top 5 */
 const topQuotes =
 sortedQuotes.slice(0, 5);
 
@@ -763,8 +760,19 @@ ${crowns[index]}
 📤 Share
 </span>
 
-/* TOP QUOTES ACTIONS */
+</div>
 
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* LIKE */
 function topLikeQuote(text){
 
 const quote =
@@ -773,37 +781,8 @@ quotesDb[currentMood]
 
 if(!quote) return;
 
-const quoteId =
-`${currentMood}_${quote.text.substring(0,15)}`;
-
-if(likedQuotes.has(quoteId)){
-
-likedQuotes.delete(quoteId);
-
-quote.likes =
-Math.max(0,(quote.likes || 1)-1);
-
-showToast("Like dihapus 💔");
-
-}else{
-
-likedQuotes.add(quoteId);
-
 quote.likes =
 (quote.likes || 0)+1;
-
-showToast("Quote disukai 💗");
-
-createHeartBurst();
-
-}
-
-localStorage.setItem(
-'liked_quotes',
-JSON.stringify(
-Array.from(likedQuotes)
-)
-);
 
 localStorage.setItem(
 'quotes_db',
@@ -811,68 +790,25 @@ JSON.stringify(quotesDb)
 );
 
 renderTopQuotes();
-renderQuote();
+
+showToast("Quote disukai 💗");
 
 }
 
 /* SAVE */
-function topSaveQuote(text){
-
-const quote =
-quotesDb[currentMood]
-.find(q => q.text === text);
-
-if(!quote) return;
-
-const quoteId =
-`${currentMood}_${quote.text.substring(0,15)}`;
-
-if(savedQuotes.has(quoteId)){
-
-savedQuotes.delete(quoteId);
-
-showToast("Quote dihapus 📂");
-
-}else{
-
-savedQuotes.add(quoteId);
+function topSaveQuote(){
 
 showToast("Quote disimpan 📌");
-
-}
-
-localStorage.setItem(
-'saved_quotes',
-JSON.stringify(
-Array.from(savedQuotes)
-)
-);
-
-renderTopQuotes();
-renderQuote();
 
 }
 
 /* SHARE */
 function topShareQuote(text){
 
-const quote =
-quotesDb[currentMood]
-.find(q => q.text === text);
-
-if(!quote) return;
-
-const shareText =
-`"${quote.text}" - ${quote.author}`;
-
-navigator.clipboard.writeText(
-shareText
-).then(()=>{
+navigator.clipboard.writeText(text);
 
 showToast(
 "Quote berhasil disalin 📋"
 );
-
-});
 
 }
