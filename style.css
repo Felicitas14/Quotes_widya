@@ -880,53 +880,83 @@ body.dark-theme .input-group select option {
     
     }
 
-    /* HAPPY */
-    body.happy-bg {
+   /* HAPPY LIGHT */
+    body.happy-bg:not(.dark-theme) {
     
-    background-image:
+    background:
     radial-gradient(
-    circle at 15% 20%,
-    rgba(255, 200, 230, 0.25),
-    transparent 35%
+    circle at 10% 20%,
+    rgba(255, 220, 240, 0.8) 0%,
+    transparent 40%
     ),
     
     radial-gradient(
-    circle at 85% 80%,
-    rgba(255, 170, 210, 0.18),
-    transparent 35%
+    circle at 80% 80%,
+    rgba(255, 170, 220, 0.8) 0%,
+    transparent 40%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #ffd6e8,
+    #ffb6d9,
+    #ff9acb
     );
+    
+    background-size:
+    200% 200%;
     }
     
-    /* SAD */
-    body.sad-bg {
+    /* SAD LIGHT */
+    body.sad-bg:not(.dark-theme) {
     
-    background-image:
+    background:
     radial-gradient(
-    circle at 15% 20%,
-    rgba(120, 120, 255, 0.18),
-    transparent 35%
+    circle at 10% 20%,
+    rgba(120, 120, 255, 0.35) 0%,
+    transparent 40%
     ),
     
     radial-gradient(
-    circle at 85% 80%,
-    rgba(180, 180, 255, 0.12),
-    transparent 35%
+    circle at 80% 80%,
+    rgba(180, 180, 255, 0.25) 0%,
+    transparent 40%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #6f5b95,
+    #4c3f6d,
+    #35284d
     );
+    
+    background-size:
+    200% 200%;
     }
     
-    /* SAVAGE */
-    body.savage-bg {
+    /* SAVAGE LIGHT */
+    body.savage-bg:not(.dark-theme) {
     
-    background-image:
+    background:
     radial-gradient(
-    circle at 15% 20%,
-    rgba(255, 80, 120, 0.15),
-    transparent 35%
+    circle at 10% 20%,
+    rgba(255, 80, 120, 0.35) 0%,
+    transparent 40%
     ),
     
     radial-gradient(
-    circle at 85% 80%,
-    rgba(120, 0, 40, 0.15),
-    transparent 35%
+    circle at 80% 80%,
+    rgba(120, 0, 40, 0.25) 0%,
+    transparent 40%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #7a1c36,
+    #4d1020,
+    #2b0a12
     );
+    
+    background-size:
+    200% 200%;
     }
