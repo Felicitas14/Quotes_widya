@@ -216,7 +216,6 @@ function renderQuote() {
 
         // Update button states (likes, saves)
         updateButtonStates(quote);
-        renderTopQuotes();
 
         // Fade back in
         if (quoteCardInner) {
@@ -445,6 +444,7 @@ function handleLikeToggle() {
 
     // Update displays
     updateButtonStates(quote);
+    renderTopQuotes();
 }
 
 function handleSaveToggle() {
@@ -682,7 +682,6 @@ function createHeartBurst() {
 
 // Initial startup render
 renderQuote();
-renderTopQuotes();
 document.body.classList.add("happy-bg");
 
 /* TOP 5 QUOTES */
