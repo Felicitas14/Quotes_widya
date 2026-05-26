@@ -879,3 +879,54 @@ body.dark-theme .input-group select option {
     }
     
     }
+
+    /* HAPPY BACKGROUND */
+    body.happy-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(255, 220, 240, 0.25),
+    transparent 30%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(255, 180, 220, 0.25),
+    transparent 30%
+    );
+    }
+    
+    /* SAD BACKGROUND */
+    body.sad-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(120, 120, 255, 0.12),
+    transparent 30%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(180, 180, 255, 0.10),
+    transparent 30%
+    );
+    }
+    
+    /* SAVAGE BACKGROUND */
+    body.savage-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(255, 80, 120, 0.15),
+    transparent 30%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(120, 0, 40, 0.15),
+    transparent 30%
+    );
+    }
