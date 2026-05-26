@@ -684,7 +684,7 @@ function createHeartBurst() {
 renderQuote();
 document.body.classList.add("happy-bg");
 
-/* TOP 5 QUOTES */
+/* PREMIUM TOP QUOTES */
 function renderTopQuotes() {
 
 const container =
@@ -694,14 +694,14 @@ document.getElementById(
 
 if (!container) return;
 
-/* ambil semua quote */
+/* semua quotes */
 const allQuotes =
 Object.values(quotesDb)
 .flat();
 
-/* urutkan berdasarkan likes */
-const sorted =
-allQuotes.sort(
+/* urut berdasarkan likes */
+const sortedQuotes =
+[...allQuotes].sort(
 (a, b) =>
 (b.likes || 0)
 -
@@ -709,29 +709,48 @@ allQuotes.sort(
 );
 
 /* ambil top 5 */
-const top5 =
-sorted.slice(0, 5);
+const topQuotes =
+sortedQuotes.slice(0, 5);
 
 container.innerHTML = "";
 
-/* render */
-top5.forEach((quote, index) => {
+topQuotes.forEach((quote, index) => {
+
+const crowns = [
+"👑",
+"🥈",
+"🥉",
+"",
+""
+];
 
 container.innerHTML += `
 
-<div class="mini-quote glass-card">
+<div class="top-quote-card glass-card">
 
-<p class="mini-quote-text">
-#${index + 1} "${quote.text}"
+<div class="top-quote-header">
+
+<div class="rank-badge">
+#${index + 1}
+</div>
+
+<div class="crown">
+${crowns[index]}
+</div>
+
+</div>
+
+<p class="top-quote-text">
+"${quote.text}"
 </p>
 
-<div class="mini-quote-footer">
-
-<span class="author">
+<p class="top-quote-author">
 - ${quote.author}
-</span>
+</p>
 
-<div class="actions">
+<div class="top-quote-footer">
+
+<div class="top-quote-actions">
 
 <span>
 ❤️ ${quote.likes || 0}
@@ -752,3 +771,7 @@ container.innerHTML += `
 </div>
 
 `;
+
+});
+
+}
