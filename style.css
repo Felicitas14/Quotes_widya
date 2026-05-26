@@ -960,3 +960,84 @@ body.dark-theme .input-group select option {
     background-size:
     200% 200%;
     }
+
+    /* HAPPY DARK */
+    body.dark-theme.happy-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(255, 120, 180, 0.20),
+    transparent 35%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(255, 180, 220, 0.15),
+    transparent 35%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #2b1020,
+    #3a1630,
+    #1f0b18
+    );
+    
+    background-size:
+    400% 400%;
+    }
+    
+    /* SAD DARK */
+    body.dark-theme.sad-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(120, 120, 255, 0.18),
+    transparent 35%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(180, 180, 255, 0.12),
+    transparent 35%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #161625,
+    #1f1f38,
+    #10101c
+    );
+    
+    background-size:
+    400% 400%;
+    }
+    
+    /* SAVAGE DARK */
+    body.dark-theme.savage-bg {
+    
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(255, 50, 100, 0.20),
+    transparent 35%
+    ),
+    
+    radial-gradient(
+    circle at bottom right,
+    rgba(120, 0, 40, 0.15),
+    transparent 35%
+    ),
+    
+    linear-gradient(
+    135deg,
+    #24070f,
+    #3a0b18,
+    #120308
+    );
+    
+    background-size:
+    400% 400%;
+    }
