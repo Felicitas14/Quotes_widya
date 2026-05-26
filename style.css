@@ -11,7 +11,8 @@
     --glass-bg: rgba(255, 255, 255, 0.55);
     --glass-border: rgba(255, 255, 255, 0.7);
     --glass-shadow: 0 8px 32px 0 rgba(230, 130, 200, 0.3);
-    transition: background 0.3s, color 0.3s;
+    transition:
+    all 0.5s ease;
 }
 
 body.dark-theme {
@@ -801,3 +802,36 @@ body.dark-theme .input-group select option {
 
     transform: scale(1.08);
 }
+
+    /* HAPPY */
+    body.happy-bg {
+    background:
+    linear-gradient(
+    135deg,
+    #ffd6e8,
+    #ffb6d9,
+    #d5a6ff
+    );
+    }
+    
+    /* SAD */
+    body.sad-bg {
+    background:
+    linear-gradient(
+    135deg,
+    #1e1e2f,
+    #3d2c4f,
+    #5c5470
+    );
+    }
+    
+    /* SAVAGE */
+    body.savage-bg {
+    background:
+    linear-gradient(
+    135deg,
+    #2b0a12,
+    #4d1020,
+    #7a1c36
+    );
+    }
