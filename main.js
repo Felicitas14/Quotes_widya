@@ -684,7 +684,7 @@ function createHeartBurst() {
 renderQuote();
 document.body.classList.add("happy-bg");
 
-/* PREMIUM TOP QUOTES */
+/* TOP QUOTES PER MOOD */
 function renderTopQuotes() {
 
 const container =
@@ -694,14 +694,13 @@ document.getElementById(
 
 if (!container) return;
 
-/* semua quotes */
-const allQuotes =
-Object.values(quotesDb)
-.flat();
+/* ambil quotes sesuai mood aktif */
+const moodQuotes =
+quotesDb[currentMood] || [];
 
 /* urut berdasarkan likes */
 const sortedQuotes =
-[...allQuotes].sort(
+[...moodQuotes].sort(
 (a, b) =>
 (b.likes || 0)
 -
@@ -723,6 +722,15 @@ const crowns = [
 "",
 ""
 ];
+
+const quoteId =
+`${currentMood}_${quote.text.substring(0, 15)}`;
+
+const isLiked =
+likedQuotes.has(quoteId);
+
+const isSaved =
+savedQuotes.has(quoteId);
 
 container.innerHTML += `
 
@@ -752,16 +760,32 @@ ${crowns[index]}
 
 <div class="top-quote-actions">
 
-<span>
-❤️ ${quote.likes || 0}
+<span
+class="top-like-btn"
+onclick="topLikeQuote('${quote.text}')"
+>
+
+${isLiked ? "💖" : "❤️"}
+${quote.likes || 0}
+
 </span>
 
-<span>
-📌 Save
+<span
+class="top-save-btn"
+onclick="topSaveQuote('${quote.text}')"
+>
+
+${isSaved ? "📂 Saved" : "📌 Save"}
+
 </span>
 
-<span>
+<span
+class="top-share-btn"
+onclick="topShareQuote('${quote.text}')"
+>
+
 📤 Share
+
 </span>
 
 </div>
@@ -773,89 +797,5 @@ ${crowns[index]}
 `;
 
 });
-
-}
-
-/* RENDER TOP 5 QUOTES - SAMA STYLE DENGAN QUOTE UTAMA */
-function renderTopQuotes() {
-
-    const container = document.getElementById("topQuotesContainer");
-
-    if (!container) return;
-
-    // Ambil semua quote dari semua kategori
-    const allQuotes = Object.values(quotesDb).flat();
-
-    // Urutkan berdasarkan likes (terbanyak ke terkecil)
-    const sortedQuotes = [...allQuotes].sort(
-        (a, b) => (b.likes || 0) - (a.likes || 0)
-    );
-
-    // Ambil top 5
-    const topQuotes = sortedQuotes.slice(0, 5);
-
-    container.innerHTML = "";
-
-    // Render Top Quotes
-    topQuotes.forEach((quote, index) => {
-
-        const rank = index + 1;
-
-        const crown =
-            rank === 1 ? "👑" :
-            rank === 2 ? "🥈" :
-            rank === 3 ? "🥉" :
-            "";
-
-        container.innerHTML += `
-
-        <div class="top-quote-card glass-card">
-
-            <div class="top-quote-header">
-
-                <div class="rank">
-                    <span class="rank-number">#${rank}</span>
-                    ${crown ? `<span class="rank-crown">${crown}</span>` : ""}
-                </div>
-
-                <div class="top-quote-crown">
-                    ${rank <= 3 ? '<i class="fas fa-crown"></i>' : ''}
-                </div>
-
-            </div>
-
-            <p class="top-quote-text">
-                "${quote.text}"
-            </p>
-
-            <p class="top-quote-author">
-                - ${quote.author}
-            </p>
-
-            <div class="top-quote-footer">
-
-                <div class="top-quote-actions">
-
-                    <span class="action-like" title="Like">
-                        ❤️ <strong>${quote.likes || 0}</strong>
-                    </span>
-
-                    <span class="action-save" title="Save">
-                        📌 Save
-                    </span>
-
-                    <span class="action-share" title="Share">
-                        📤 Share
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
 
 }
