@@ -683,3 +683,69 @@ function createHeartBurst() {
 renderQuote();
 
 document.body.classList.add("happy-bg");
+
+/* TOP 5 QUOTES */
+function renderTopQuotes() {
+
+const container =
+document.getElementById(
+"topQuotesContainer"
+);
+
+if (!container) return;
+
+/* ambil semua quote */
+const allQuotes =
+Object.values(quotesDb)
+.flat();
+
+/* urutkan berdasarkan likes */
+const sorted =
+allQuotes.sort(
+(a, b) =>
+(b.likes || 0)
+-
+(a.likes || 0)
+);
+
+/* ambil top 5 */
+const top5 =
+sorted.slice(0, 5);
+
+container.innerHTML = "";
+
+/* render */
+top5.forEach((quote, index) => {
+
+container.innerHTML += `
+
+<div class="mini-quote glass-card">
+
+<p>
+#${index + 1}
+"${quote.text}"
+</p>
+
+<div class="mini-quote-footer">
+
+<span class="author">
+- ${quote.author}
+</span>
+
+<div class="actions">
+
+<span>
+❤️ ${quote.likes || 0}
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
