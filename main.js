@@ -385,7 +385,8 @@ function selectMood(mood) {
 
     // Render new set of quotes
     renderQuote();
-    
+    renderTopQuotes();    
+        
     // Show a small beautiful alert
     showToast(`Mood diganti ke ${mood}! ✨`);
 }
