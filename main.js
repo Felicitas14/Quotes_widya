@@ -755,7 +755,8 @@ likedQuotes.has(
 ? 'liked-top'
 : ''
 }"
-onclick='topLikeQuote(${JSON.stringify(quote.text)})'>
+onclick="topLikeQuote(this)"
+data-text="${encodeURIComponent(quote.text)}">
 
 <i class="${
 likedQuotes.has(
@@ -768,7 +769,6 @@ likedQuotes.has(
 ${quote.likes || 0}
 
 </span>
-
 <span
 onclick='topSaveQuote(${JSON.stringify(quote.text)})'>
 
