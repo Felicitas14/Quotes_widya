@@ -787,7 +787,7 @@ Share
 
 <span 
 class="delete-btn"
-onclick="deleteUserQuote(${index})">
+onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
 
 <i class="fas fa-trash"></i>
 Delete
@@ -875,4 +875,32 @@ showToast(
 
 }
 
+function deleteUserQuote(text){
+
+const confirmDelete =
+confirm(
+"Hapus quote ini?"
+);
+
+if(!confirmDelete) return;
+
+quotesDb[currentMood] =
+quotesDb[currentMood]
+.filter(
+q => q.text !== text
+);
+
+localStorage.setItem(
+'quotes_db',
+JSON.stringify(quotesDb)
+);
+
+renderQuote();
+renderTopQuotes();
+
+showToast(
+"Quote berhasil dihapus 🗑️"
+);
+
+}
 renderTopQuotes();
