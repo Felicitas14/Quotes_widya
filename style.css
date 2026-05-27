@@ -1072,8 +1072,8 @@ body.dark-theme .input-group select option {
     border-top:1px solid rgba(255,255,255,.06);
     }
     
-    /* ACTIONS */
-   .top-quote-actions{
+   /* ACTIONS */
+    .top-quote-actions{
     display:flex;
     justify-content:flex-start;
     align-items:center;
@@ -1081,7 +1081,9 @@ body.dark-theme .input-group select option {
     gap:12px;
     }
     
+    /* BUTTON */
     .top-quote-actions span{
+    
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1127,29 +1129,39 @@ body.dark-theme .input-group select option {
     );
     
     }
-
-   /* LIKE ACTIVE */
+    
+    /* HOVER */
+    .top-quote-actions span:hover{
+    
+    transform:
+    translateY(-2px);
+    
+    background:
+    rgba(255,255,255,.72);
+    
+    }
+    
+    /* LIKE ACTIVE */
     .like-btn.liked-top{
+    
+    background:
+    rgba(255,255,255,.72) !important;
     
     color:
     #ff4f9f !important;
     
-    background:
-    rgba(255,255,255,.55) !important;
-    
     border:
     1px solid rgba(255,255,255,.18);
     
-    box-shadow:
-    0 4px 12px rgba(
-    255,
-    255,
-    255,
-    .08
-    );
+    transform:
+    scale(1.03);
     
     }
     
+    /* LIKE ICON */
     .like-btn.liked-top i{
-    color:#ff4f9f !important;
+    
+    color:
+    #ff4f9f !important;
+    
     }
