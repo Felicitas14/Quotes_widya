@@ -757,8 +757,13 @@ likedQuotes.has(
 }"
 onclick="topLikeQuote('${quote.text}')">
 
-<i class="far fa-heart"></i>
-${quote.likes || 0}
+<i class="${
+likedQuotes.has(
+`${currentMood}_${quote.text.substring(0,15)}`
+)
+? 'fas fa-heart'
+: 'far fa-heart'
+}"></i>${quote.likes || 0}
 
 </span>
 
