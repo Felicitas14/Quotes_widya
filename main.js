@@ -756,7 +756,7 @@ likedQuotes.has(
 : ''
 }"
 onclick="topLikeQuote(this)"
-data-text="${encodeURIComponent(quote.text)}">
+data-text='${quote.text.replace(/'/g,"&apos;")}'>
 
 <i class="${
 likedQuotes.has(
@@ -846,25 +846,7 @@ JSON.stringify(quotesDb)
 );
 
 renderTopQuotes();
-
-}
-
-/* SAVE */
-localStorage.setItem(
-'liked_quotes',
-JSON.stringify(
-Array.from(likedQuotes)
-)
-);
-
-localStorage.setItem(
-'quotes_db',
-JSON.stringify(quotesDb)
-);
-
-/* REFRESH */
-renderTopQuotes();
-
+    
 }
 /* SAVE */
 function topSaveQuote(){
