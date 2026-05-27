@@ -4,163 +4,578 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes Life</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6YKW5TSPC"></script>
+
+    <!-- Google tag -->
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-Q6YKW5TSPC">
+    </script>
+
     <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
     gtag('config', 'G-Q6YKW5TSPC');
     </script>
+
 </head>
+
 <body>
 
+    <!-- LOADER -->
     <div id="loader">
-        <div class="loader-heart">💗</div>
-        <p>Loading your feelings...</p>
+
+        <div class="loader-heart">
+            💗
+        </div>
+
+        <p>
+            Loading your feelings...
+        </p>
+
     </div>
 
+    <!-- MUSIC -->
     <audio id="music" autoplay loop>
         <source src="instrumen.mp3" type="audio/mpeg">
     </audio>
-    
+
     <script>
+
     window.addEventListener("load", () => {
-        const music = document.getElementById("music");
-    
+
+        const music =
+        document.getElementById("music");
+
         music.play().catch(() => {
-            document.body.addEventListener("click", () => {
+
+            document.body.addEventListener(
+            "click",
+
+            () => {
                 music.play();
-            }, { once: true });
+            },
+
+            { once: true }
+
+            );
+
         });
+
     });
+
     </script>
-        
-    <!-- Header Navigation -->
+
+    <!-- HEADER -->
     <header class="glass-header">
+
         <div class="header-content">
+
             <div class="logo">
-                <span class="logo-text">QuoteSpace</span>
-                <span class="logo-icon">☁️</span>
+
+                <span class="logo-text">
+                    QuoteSpace
+                </span>
+
+                <span class="logo-icon">
+                    ☁️
+                </span>
+
             </div>
+
+            <!-- SEARCH -->
             <div class="search-bar">
+
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cari quotes sedih...">
+
+                <input
+                type="text"
+                placeholder="Cari quotes sedih...">
+
             </div>
+
+            <!-- NAV -->
             <nav class="nav-links">
-                <a href="#" class="active">Home</a>
-                <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
-                <a href="#">Favorites</a>
-                <a href="#">About <i class="fas fa-chevron-down"></i></a>
+
+                <a href="#" class="active">
+                    Home
+                </a>
+
+                <a href="#">
+                    Categories
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+
+                <a href="#">
+                    Favorites
+                </a>
+
+                <a href="#">
+                    About
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+
             </nav>
+
+            <!-- THEME -->
             <div class="user-controls">
+
                 <div class="theme-toggle">
+
                     <div class="toggle-circle"></div>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
 
+    <!-- MAIN -->
     <main class="main-container">
-        <!-- View: Quote Carousel -->
-        <section id="quote-carousel-view" class="view-section active">
+
+        <!-- QUOTE VIEW -->
+        <section
+        id="quote-carousel-view"
+        class="view-section active">
+
+            <!-- MOOD -->
             <div class="mood-header">
-                <h2>Your Mood Today: <span class="highlight-text">Happy</span> 😉</h2>
-                <button id="btn-change-mood" class="btn-text">Ganti Mood</button>
+
+                <h2>
+
+                    Your Mood Today:
+
+                    <span class="highlight-text">
+                        Happy
+                    </span>
+
+                    😉
+
+                </h2>
+
+                <button
+                id="btn-change-mood"
+                class="btn-text">
+
+                    Ganti Mood
+
+                </button>
+
             </div>
 
+            <!-- QUOTE CARD -->
             <div class="quote-card glass-card">
+
                 <div class="quote-card-inner">
-                    <div class="quote-icons">💕</div>
-                    <h1 class="quote-text">Everything you need will come at the right time.</h1>
-                    <p class="quote-author">- Unknown</p>
-                    
+
+                    <div class="quote-icons">
+                        💕
+                    </div>
+
+                    <h1 class="quote-text">
+
+                        Everything you need
+                        will come at the
+                        right time.
+
+                    </h1>
+
+                    <p class="quote-author">
+
+                        - Unknown
+
+                    </p>
+
+                    <!-- ACTIONS -->
                     <div class="quote-actions">
-                        <button class="action-btn active"><i class="fas fa-heart"></i> 245</button>
-                        <button class="action-btn"><i class="far fa-bookmark"></i> Save</button>
-                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+
+                        <!-- LIKE -->
+                        <button
+                        class="action-btn active">
+
+                            <i class="fas fa-heart"></i>
+
+                            245
+
+                        </button>
+
+                        <!-- SAVE -->
+                        <button
+                        class="action-btn">
+
+                            <i class="far fa-bookmark"></i>
+
+                            Save
+
+                        </button>
+
+                        <!-- SHARE -->
+                        <button
+                        class="action-btn">
+
+                            <i class="fas fa-share"></i>
+
+                            Share
+
+                        </button>
+
+                        <!-- DELETE -->
+                        <button
+
+                        id="deleteQuoteBtn"
+
+                        class="
+                        action-btn
+                        delete-main-btn
+                        "
+
+                        onclick="
+                        deleteCurrentQuote()
+                        "
+
+                        style="display:none;">
+
+                            <i class="fas fa-trash"></i>
+
+                            Delete
+
+                        </button>
+
                     </div>
+
                 </div>
-                <!-- Navigation arrows -->
-                <button class="nav-arrow left"><i class="fas fa-chevron-left"></i></button>
-                <button class="nav-arrow right"><i class="fas fa-chevron-right"></i></button>
+
+                <!-- NAVIGATION -->
+                <button class="nav-arrow left">
+
+                    <i class="fas fa-chevron-left"></i>
+
+                </button>
+
+                <button class="nav-arrow right">
+
+                    <i class="fas fa-chevron-right"></i>
+
+                </button>
+
             </div>
 
+            <!-- DOTS -->
             <div class="quote-controls">
+
                 <div class="dots">
+
                     <span class="dot active"></span>
+
                     <span class="dot"></span>
+
                     <span class="dot"></span>
+
                 </div>
-                <button id="btn-open-upload" class="btn-secondary" style="margin-top: 15px;">Tulis Quote Kamu ✨</button>
+
+                <!-- OPEN MODAL -->
+                <button
+
+                id="btn-open-upload"
+
+                class="btn-secondary"
+
+                style="margin-top:15px;">
+
+                    Tulis Quote Kamu ✨
+
+                </button>
+
             </div>
-            
-            <!-- Top Quotes Section (Preview) -->
+
+            <!-- TOP QUOTES -->
             <div class="top-quotes-section">
-                <h3 class="section-title">Top Quotes Today ✨</h3>
-                <div class="top-quotes-grid" id="topQuotesContainer">
+
+                <h3 class="section-title">
+
+                    Top Quotes Today ✨
+
+                </h3>
+
+                <div
+
+                class="top-quotes-grid"
+
+                id="topQuotesContainer">
+
                 </div>
-                    </div>
+
+            </div>
+
         </section>
 
-        <!-- View: Mood Selection -->
-        <section id="mood-selection-view" class="view-section hidden">
-            <h1 class="mood-title">Pilih Mood Kamu Hari Ini 💗</h1>
-            
+        <!-- MOOD SELECTION -->
+        <section
+
+        id="mood-selection-view"
+
+        class="view-section hidden">
+
+            <h1 class="mood-title">
+
+                Pilih Mood Kamu Hari Ini 💗
+
+            </h1>
+
+            <!-- MOOD CARDS -->
             <div class="mood-cards">
-                <div class="mood-card glass-card mood-sad" onclick="selectMood('Sad')">
-                    <div class="mood-icon">💔💧</div>
-                    <h3>Sad Quotes</h3>
-                    <p>Untuk hati yang lagi capek...</p>
+
+                <!-- SAD -->
+                <div
+
+                class="
+                mood-card
+                glass-card
+                mood-sad
+                "
+
+                onclick="
+                selectMood('Sad')
+                ">
+
+                    <div class="mood-icon">
+
+                        💔💧
+
+                    </div>
+
+                    <h3>
+                        Sad Quotes
+                    </h3>
+
+                    <p>
+                        Untuk hati yang lagi capek...
+                    </p>
+
                 </div>
-                <div class="mood-card glass-card mood-happy" onclick="selectMood('Happy')">
-                    <div class="mood-icon">☀️😊</div>
-                    <h3>Happy Quotes</h3>
-                    <p>Biar harimu makin cerah!</p>
+
+                <!-- HAPPY -->
+                <div
+
+                class="
+                mood-card
+                glass-card
+                mood-happy
+                "
+
+                onclick="
+                selectMood('Happy')
+                ">
+
+                    <div class="mood-icon">
+
+                        ☀️😊
+
+                    </div>
+
+                    <h3>
+                        Happy Quotes
+                    </h3>
+
+                    <p>
+                        Biar harimu makin cerah!
+                    </p>
+
                 </div>
-                <div class="mood-card glass-card mood-savage" onclick="selectMood('Savage')">
-                    <div class="mood-icon">😏🔥</div>
-                    <h3>Savage Quotes</h3>
-                    <p>Halus tapi nusuk...</p>
+
+                <!-- SAVAGE -->
+                <div
+
+                class="
+                mood-card
+                glass-card
+                mood-savage
+                "
+
+                onclick="
+                selectMood('Savage')
+                ">
+
+                    <div class="mood-icon">
+
+                        😏🔥
+
+                    </div>
+
+                    <h3>
+                        Savage Quotes
+                    </h3>
+
+                    <p>
+                        Halus tapi nusuk...
+                    </p>
+
                 </div>
+
             </div>
-            <button id="btn-back-from-mood" class="btn-text" style="margin-top: 30px;">Kembali</button>
+
+            <!-- BACK -->
+            <button
+
+            id="btn-back-from-mood"
+
+            class="btn-text"
+
+            style="margin-top:30px;">
+
+                Kembali
+
+            </button>
+
         </section>
+
     </main>
 
-    <!-- Modal: Upload Quote -->
-    <div id="upload-modal" class="modal-overlay hidden">
+    <!-- MODAL -->
+    <div
+
+    id="upload-modal"
+
+    class="modal-overlay hidden">
+
         <div class="modal-content glass-card">
-            <button id="btn-close-modal" class="close-btn"><i class="fas fa-times"></i></button>
-            <h2 class="modal-title">Tulis Quote Kamu ✨</h2>
-            <p class="modal-subtitle">Tuliskan kata-kata inspiratif kamu & bagikan ke semua orang!</p>
-            
+
+            <!-- CLOSE -->
+            <button
+
+            id="btn-close-modal"
+
+            class="close-btn">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+            <h2 class="modal-title">
+
+                Tulis Quote Kamu ✨
+
+            </h2>
+
+            <p class="modal-subtitle">
+
+                Tuliskan kata-kata
+                inspiratif kamu &
+                bagikan ke semua orang!
+
+            </p>
+
+            <!-- FORM -->
             <form id="upload-form">
+
+                <!-- TEXTAREA -->
                 <div class="input-group">
-                    <textarea placeholder="Tulis quotes kamu..." rows="4" required></textarea>
+
+                    <textarea
+
+                    placeholder="
+                    Tulis quotes kamu...
+                    "
+
+                    rows="4"
+
+                    required>
+
+                    </textarea>
+
                 </div>
+
+                <!-- NAME -->
                 <div class="input-group">
-                    <input type="text" placeholder="Nama kamu..." required>
+
+                    <input
+
+                    type="text"
+
+                    placeholder="
+                    Nama kamu...
+                    "
+
+                    required>
+
                 </div>
+
+                <!-- MOOD -->
                 <div class="input-group">
-                    <select id="upload-mood-select" required>
-                        <option value="" disabled selected>Pilih Kategori Mood...</option>
-                        <option value="Happy">Happy 😊</option>
-                        <option value="Sad">Sad 💔</option>
-                        <option value="Savage">Savage 😏</option>
+
+                    <select
+                    id="upload-mood-select"
+                    required>
+
+                        <option
+                        value=""
+                        disabled
+                        selected>
+
+                            Pilih Kategori Mood...
+
+                        </option>
+
+                        <option value="Happy">
+
+                            Happy 😊
+
+                        </option>
+
+                        <option value="Sad">
+
+                            Sad 💔
+
+                        </option>
+
+                        <option value="Savage">
+
+                            Savage 😏
+
+                        </option>
+
                     </select>
+
                 </div>
-                <button type="submit" class="btn-primary w-100">Upload 💗</button>
+
+                <!-- SUBMIT -->
+                <button
+
+                type="submit"
+
+                class="btn-primary w-100">
+
+                    Upload 💗
+
+                </button>
+
             </form>
-            <p class="modal-note">Quotes akan langsung diterbitkan di galeri pilihan Anda.</p>
+
+            <p class="modal-note">
+
+                Quotes akan langsung
+                diterbitkan di galeri
+                pilihan Anda.
+
+            </p>
+
         </div>
+
     </div>
 
+    <!-- SCRIPT -->
     <script src="main.js"></script>
 
 </body>
