@@ -785,6 +785,15 @@ Share
 
 </span>
 
+<span 
+class="delete-btn"
+onclick="deleteUserQuote(${index})">
+
+<i class="fas fa-trash"></i>
+Delete
+
+</span>
+
 </div>
 
 </div>
