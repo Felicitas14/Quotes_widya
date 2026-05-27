@@ -798,7 +798,12 @@ Share
 }
 
 /* LIKE */
-function topLikeQuote(text){
+function topLikeQuote(el){
+
+const text =
+decodeURIComponent(
+el.dataset.text
+);
 
 const quote =
 quotesDb[currentMood]
@@ -814,7 +819,10 @@ if(likedQuotes.has(quoteId)){
 likedQuotes.delete(quoteId);
 
 quote.likes =
-Math.max(0,(quote.likes || 1)-1);
+Math.max(
+0,
+(quote.likes || 1)-1
+);
 
 }else{
 
@@ -822,6 +830,22 @@ likedQuotes.add(quoteId);
 
 quote.likes =
 (quote.likes || 0)+1;
+
+}
+
+localStorage.setItem(
+'liked_quotes',
+JSON.stringify(
+Array.from(likedQuotes)
+)
+);
+
+localStorage.setItem(
+'quotes_db',
+JSON.stringify(quotesDb)
+);
+
+renderTopQuotes();
 
 }
 
