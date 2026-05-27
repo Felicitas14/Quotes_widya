@@ -829,6 +829,51 @@ body.dark-theme .input-group select option {
     transform: scale(1.08);
 }
 
+    .delete-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    
+    padding:14px 28px;
+    
+    border-radius:999px;
+    
+    background:
+    rgba(255,255,255,.14);
+    
+    border:
+    1px solid rgba(255,255,255,.18);
+    
+    color:#ff8fb8;
+    
+    cursor:pointer;
+    
+    transition:.25s;
+    
+    font-weight:600;
+    
+    }
+    
+    .delete-btn:hover{
+    
+    transform:
+    translateY(-2px);
+    
+    background:
+    rgba(255,80,120,.16);
+    
+    color:#ff4f8f;
+    
+    box-shadow:
+    0 8px 20px rgba(
+    255,
+    80,
+    120,
+    .18
+    );
+    
+    }
    /* HAPPY LIGHT */
     body.happy-bg:not(.dark-theme) {
     
