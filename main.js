@@ -755,7 +755,7 @@ likedQuotes.has(
 ? 'like-btn liked-top'
 : 'like-btn'
 }"
-onclick="topLikeQuote('${quote.text}')">
+onclick='topLikeQuote(${JSON.stringify(quote.text)})'
 
 <i class="${
 likedQuotes.has(
@@ -767,14 +767,14 @@ likedQuotes.has(
 
 </span>
 
-<span onclick="topSaveQuote('${quote.text}')">
+<span onclick='topSaveQuote(${JSON.stringify(quote.text)})'
 
 <i class="far fa-bookmark"></i>
 Save
 
 </span>
 
-<span onclick="topShareQuote('${quote.text}')">
+<span onclick='topShareQuote(${JSON.stringify(quote.text)})'
 
 <i class="fas fa-share"></i>
 Share
