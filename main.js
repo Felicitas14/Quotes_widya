@@ -904,3 +904,5 @@ showToast(
 
 }
 renderTopQuotes();
+
+localStorage.clear();
