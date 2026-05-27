@@ -750,7 +750,7 @@ ${crowns[index]}
 <span
 class="like-btn ${
 likedQuotes.has(
-`${currentMood}_${quote.text.substring(0,15)}`
+`${currentMood}_${btoa(quote.text)}`
 )
 ? 'liked-top'
 : ''
@@ -759,7 +759,7 @@ onclick='topLikeQuote(${JSON.stringify(quote.text)})'>
 
 <i class="${
 likedQuotes.has(
-`${currentMood}_${quote.text.substring(0,15)}`
+`${currentMood}_${btoa(quote.text)}`
 )
 ? 'fas fa-heart'
 : 'far fa-heart'
@@ -807,7 +807,7 @@ quotesDb[currentMood]
 if(!quote) return;
 
 const quoteId =
-`${currentMood}_${quote.text.substring(0,15)}`;
+`${currentMood}_${btoa(quote.text)}`;
 
 if(likedQuotes.has(quoteId)){
 
