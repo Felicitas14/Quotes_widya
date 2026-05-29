@@ -45,6 +45,7 @@ let currentQuoteIndex = 0;
 let quotesDb = {};
 let likedQuotes = new Set(); // Store indices/keys of liked quotes
 let savedQuotes = new Set(); // Store indices/keys of saved quotes
+let isAdmin = false;
 
 // Load from LocalStorage or initialize with defaults
 function initStorage() {
@@ -71,6 +72,25 @@ function initStorage() {
 }
 
 initStorage();
+let currentUserId =
+localStorage.getItem(
+'quotespace_user_id'
+);
+
+if(!currentUserId){
+
+currentUserId =
+'usr_' +
+Math.random()
+.toString(36)
+.substring(2,10);
+
+localStorage.setItem(
+'quotespace_user_id',
+currentUserId
+);
+
+}
 
 // --- 2. DOM ELEMENTS SELECTION ---
 const loader = document.getElementById('loader');
@@ -550,9 +570,9 @@ if (uploadForm) {
                 author: author,
                 emoji: "✨",
                 likes: 0,
-                isUserQuote: true
+                isUserQuote: true,
+                ownerId: currentUserId
             };
-
             // Prepend new quote to selected mood database
             if (!quotesDb[mood]) {
                 quotesDb[mood] = [];
@@ -787,6 +807,14 @@ Share
 </span>
 
 ${quote.isUserQuote ? `
+${
+(
+quote.ownerId === currentUserId
+||
+isAdmin
+)
+?
+`
 <span
 class="delete-btn"
 onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
@@ -795,18 +823,9 @@ onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
 Delete
 
 </span>
-` : ''}
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
+`
+:
+''
 }
 
 /* LIKE */
@@ -880,9 +899,30 @@ showToast(
 
 function deleteUserQuote(text){
 
+const quote =
+quotesDb[currentMood]
+.find(
+q => q.text === text
+);
+
+if(!quote) return;
+
+if(
+!isAdmin &&
+quote.ownerId !== currentUserId
+){
+
+showToast(
+'Kamu tidak bisa menghapus quote ini 🚫'
+);
+
+return;
+
+}
+
 const confirmDelete =
 confirm(
-"Hapus quote ini?"
+'Hapus quote ini?'
 );
 
 if(!confirmDelete) return;
@@ -902,7 +942,7 @@ renderQuote();
 renderTopQuotes();
 
 showToast(
-"Quote berhasil dihapus 🗑️"
+'Quote berhasil dihapus 🗑️'
 );
 
 }
