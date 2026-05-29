@@ -473,7 +473,7 @@ function handleSaveToggle() {
     if (activeQuotes.length === 0) return;
 
     const quote = activeQuotes[currentQuoteIndex];
-    const quoteId =const quoteId =
+    const quoteId =
     `${currentMood}_${btoa(quote.text)}`;
 
     if (savedQuotes.has(quoteId)) {
