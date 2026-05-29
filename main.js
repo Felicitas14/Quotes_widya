@@ -549,7 +549,8 @@ if (uploadForm) {
                 text: text,
                 author: author,
                 emoji: "✨",
-                likes: 0
+                likes: 0,
+                isUserQuote: true
             };
 
             // Prepend new quote to selected mood database
@@ -785,7 +786,8 @@ Share
 
 </span>
 
-<span 
+${quote.isUserQuote ? `
+<span
 class="delete-btn"
 onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
 
@@ -793,6 +795,7 @@ onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
 Delete
 
 </span>
+` : ''}
 
 </div>
 
