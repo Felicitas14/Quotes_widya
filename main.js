@@ -278,7 +278,7 @@ function updateButtonStates(quote) {
     if (externalLikeBtn) externalLikeBtn.style.opacity = '1';
     if (externalSaveBtn) externalSaveBtn.style.opacity = '1';
 
-    const quoteId = `${currentMood}_${quote.text.substring(0, 15)}`;
+    const quoteId = `${currentMood}_${btoa(quote.text)}`;
     const isLiked = likedQuotes.has(quoteId);
     const isSaved = savedQuotes.has(quoteId);
 
@@ -446,8 +446,8 @@ function handleLikeToggle() {
     if (activeQuotes.length === 0) return;
 
     const quote = activeQuotes[currentQuoteIndex];
-    const quoteId = `${currentMood}_${quote.text.substring(0, 15)}`;
-    
+    const quoteId =
+    `${currentMood}_${btoa(quote.text)}`;    
     if (likedQuotes.has(quoteId)) {
         likedQuotes.delete(quoteId);
         quote.likes = Math.max(0, (quote.likes || 1) - 1);
@@ -473,7 +473,8 @@ function handleSaveToggle() {
     if (activeQuotes.length === 0) return;
 
     const quote = activeQuotes[currentQuoteIndex];
-    const quoteId = `${currentMood}_${quote.text.substring(0, 15)}`;
+    const quoteId =const quoteId =
+    `${currentMood}_${btoa(quote.text)}`;
 
     if (savedQuotes.has(quoteId)) {
         savedQuotes.delete(quoteId);
@@ -806,15 +807,12 @@ Share
 
 </span>
 
-${quote.isUserQuote ? `
-${
+${quote.isUserQuote &&
 (
-quote.ownerId === currentUserId
-||
-isAdmin
+    quote.ownerId === currentUserId ||
+    isAdmin
 )
-?
-`
+? `
 <span
 class="delete-btn"
 onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
@@ -824,9 +822,17 @@ Delete
 
 </span>
 `
-:
-''
+: ''
 }
+</div>
+
+</div>
+
+`;
+
+});
+}
+
 
 /* LIKE */
 function topLikeQuote(el){
@@ -942,8 +948,11 @@ renderQuote();
 renderTopQuotes();
 
 showToast(
-'Quote berhasil dihapus 🗑️'
+    'Quote berhasil dihapus 🗑️'
 );
 
 }
+
+// Initial Render
+renderQuote();
 renderTopQuotes();
