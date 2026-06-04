@@ -956,4 +956,3 @@ showToast(
 // Initial Render
 renderQuote();
 renderTopQuotes();
- localStorage.clear();
