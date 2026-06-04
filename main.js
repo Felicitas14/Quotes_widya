@@ -783,7 +783,7 @@ data-text='${quote.text.replace(/'/g,"&apos;")}'>
 <i class="${
 likedQuotes.has(
 `${currentMood}_${btoa(quote.text)}`
-)
+) 
 ? 'fas fa-heart'
 : 'far fa-heart'
 }"></i>
