@@ -19,26 +19,54 @@ const DEFAULT_QUOTES = {
         { text: "Smile, because your smile can be the reason someone else smiles today.", author: "Unknown", emoji: "☀️", likes: 312 },
         { text: "Hari ini adalah hari yang baik untuk memiliki hari yang luar biasa!", author: "Semangat", emoji: "✨", likes: 154 },
         { text: "Believe in yourself, and you will be unstoppable.", author: "Dinda ✨", emoji: "🌟", likes: 421 },
-        { text: "Jadikan hari ini begitu luar biasa sehingga hari kemarin merasa cemburu.", author: "Anonim", emoji: "💖", likes: 298 }
+        { text: "Jadikan hari ini begitu luar biasa sehingga hari kemarin merasa cemburu.", author: "Anonim", emoji: "💖", likes: 298 },
+        { text: "Kamu lebih kuat dari yang kamu kira.", author: "Motivasi", emoji: "💪", likes: 332 },
+        { text: "Matahari selalu terbit setelah malam yang panjang.", author: "Unknown", emoji: "🌅", likes: 267 },
+        { text: "Hal-hal baik sedang menuju kepadamu.", author: "Hope", emoji: "🎀", likes: 198 },
+        { text: "Bersyukur mengubah apa yang kita miliki menjadi cukup.", author: "Anonim", emoji: "🙏", likes: 290 },
+        { text: "Jangan takut memulai lagi. Itu kesempatan untuk membangun sesuatu yang lebih baik.", author: "Unknown", emoji: "🌈", likes: 351 },
+        { text: "Kebahagiaan dimulai dari hati yang menerima.", author: "Anonim", emoji: "💗", likes: 284 },
+        { text: "Hari yang indah dimulai dengan pikiran yang positif.", author: "Sunshine", emoji: "☀️", likes: 223 },
+        { text: "Tetap tersenyum, dunia lebih indah karenanya.", author: "Unknown", emoji: "😊", likes: 315 },
+        { text: "Mimpi besar dimulai dari langkah kecil.", author: "Dreamer", emoji: "⭐", likes: 401 }
     ],
+
     Sad: [
         { text: "Terkadang, air mata adalah satu-satunya cara mata berbicara ketika mulut tak mampu menjelaskan rasa sakit.", author: "Hati Capek", emoji: "💔", likes: 345 },
         { text: "It's okay not to be okay. Sabar ya, badai pasti berlalu.", author: "Penenang Jiwa", emoji: "💧", likes: 512 },
         { text: "Aku tidak hilang, aku hanya lelah berjuang sendirian.", author: "Unknown", emoji: "🥀", likes: 278 },
         { text: "Some of the most painful scars are the ones that can't be seen.", author: "Unknown", emoji: "🖤", likes: 198 },
         { text: "Luka yang tak terlihat biasanya adalah yang paling dalam dan paling sulit disembuhkan.", author: "Anonim", emoji: "🌧️", likes: 234 },
-        { text: "Kita adalah dua orang yang saling mendoakan, namun tidak ditakdirkan bersama.", author: "SadBoy", emoji: "💔", likes: 620 }
+        { text: "Kita adalah dua orang yang saling mendoakan, namun tidak ditakdirkan bersama.", author: "SadBoy", emoji: "💔", likes: 620 },
+        { text: "Tidak semua kehilangan datang untuk kembali.", author: "Unknown", emoji: "🥀", likes: 311 },
+        { text: "Kadang yang paling menyakitkan adalah kenangan yang indah.", author: "Anonim", emoji: "🌙", likes: 420 },
+        { text: "Aku baik-baik saja, hanya saja hatiku belum.", author: "Unknown", emoji: "🖤", likes: 389 },
+        { text: "Rindu adalah luka yang tidak terlihat.", author: "Anonim", emoji: "💭", likes: 280 },
+        { text: "Beberapa orang hadir hanya untuk menjadi pelajaran.", author: "Unknown", emoji: "🍂", likes: 333 },
+        { text: "Yang paling berat adalah melepaskan sesuatu yang masih dicintai.", author: "Anonim", emoji: "💔", likes: 500 },
+        { text: "Tidak semua cerita memiliki akhir yang bahagia.", author: "Unknown", emoji: "🌧️", likes: 271 },
+        { text: "Aku belajar tersenyum meski hati sedang menangis.", author: "Strong Heart", emoji: "🥺", likes: 395 },
+        { text: "Kesepian terkadang terasa lebih bising daripada keramaian.", author: "Unknown", emoji: "🌌", likes: 344 }
     ],
+
     Savage: [
         { text: "Pura-pura bodoh itu menyenangkan saat kita sedang menghadapi orang yang pura-pura pintar.", author: "Savage King", emoji: "😏", likes: 580 },
         { text: "If you treat me like an option, I'll leave you like a choice.", author: "Unknown", emoji: "🔥", likes: 492 },
         { text: "Kamu itu seperti koin, bermuka dua dan nilainya gak seberapa.", author: "Pedas Tapi Nyata", emoji: "🪙", likes: 712 },
         { text: "I'm not holding a grudge, I'm just remembering facts.", author: "Boss", emoji: "😎", likes: 389 },
         { text: "Jangan suka menilai orang dari masa lalunya, kamu bukan Google.", author: "Anonim", emoji: "🔍", likes: 445 },
-        { text: "Some people are like clouds. When they disappear, it's a brighter day.", author: "Unknown", emoji: "☁️", likes: 520 }
+        { text: "Some people are like clouds. When they disappear, it's a brighter day.", author: "Unknown", emoji: "☁️", likes: 520 },
+        { text: "Aku bukan berubah, aku hanya berhenti mentoleransi omong kosong.", author: "Savage Girl", emoji: "💅", likes: 633 },
+        { text: "Kalau iri bilang, jangan muter-muter.", author: "Anonim", emoji: "😏", likes: 501 },
+        { text: "Aku tidak bersaing dengan siapa pun, kamu sudah kalah dari awal.", author: "Boss Energy", emoji: "👑", likes: 710 },
+        { text: "Tetaplah menjadi dirimu sendiri. Orang palsu sudah terlalu banyak.", author: "Unknown", emoji: "🎭", likes: 432 },
+        { text: "Kelas tidak perlu teriak untuk terlihat mahal.", author: "Elegant Savage", emoji: "💎", likes: 588 },
+        { text: "Aku diam bukan berarti kalah, aku cuma malas.", author: "Unknown", emoji: "😴", likes: 475 },
+        { text: "Jangan khawatir tentangku, khawatirlah tentang dirimu.", author: "Savage Queen", emoji: "🔥", likes: 650 },
+        { text: "Aku tidak jahat, aku hanya tidak mudah dibohongi.", author: "Unknown", emoji: "🖤", likes: 538 },
+        { text: "Kesuksesanku adalah balasan terbaik.", author: "Winner", emoji: "🏆", likes: 699 }
     ]
 };
-
 // State Variables
 let currentMood = 'Happy';
 let currentQuoteIndex = 0;
