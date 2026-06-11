@@ -65,6 +65,8 @@ const DEFAULT_QUOTES = {
         { text: "Jangan khawatir tentangku, khawatirlah tentang dirimu.", author: "Savage Queen", emoji: "🔥", likes: 650 },
         { text: "Aku tidak jahat, aku hanya tidak mudah dibohongi.", author: "Unknown", emoji: "🖤", likes: 538 },
         { text: "Kesuksesanku adalah balasan terbaik.", author: "Winner", emoji: "🏆", likes: 699 }
+        { text: "Hidup adalah permainan maka jadilah pemain bukan mainan.", author: "Drean resink", emoji: "😮‍💨", likes: 1410 }
+        
     ]
 };
 // State Variables
