@@ -953,6 +953,70 @@ showToast(
 
 }
 
+// ==========================
+// NAVIGATION MENU
+// ==========================
+
+document
+.getElementById("nav-home")
+?.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    document
+    .getElementById("quote-carousel-view")
+    ?.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+document
+.getElementById("nav-categories")
+?.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    document
+    .getElementById("mood-selection-view")
+    ?.classList.remove("hidden");
+
+    document
+    .getElementById("mood-selection-view")
+    ?.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+document
+.getElementById("nav-favorites")
+?.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    showToast(
+        "Fitur Favorites segera hadir 💗"
+    );
+
+});
+
+document
+.getElementById("nav-about")
+?.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    alert(
+`QuoteSpace ☁️
+
+Website quotes berdasarkan mood.
+
+Dibuat dengan 💗 oleh Ferizz.`
+    );
+
+});
+
 // Initial Render
 renderQuote();
 renderTopQuotes();
