@@ -1038,9 +1038,10 @@ document
     alert(
 `QuoteSpace ☁️
 
-Website quotes berdasarkan mood.
+QuoteSpace adalah tempat untuk menemukan, menyimpan, dan membagikan quote favoritmu. 
+Temukan kata-kata yang cocok dengan suasana hatimu setiap hari.
 
-Dibuat dengan 💗 oleh Ferizz.`
+Dibuat dengan  oleh Ferizz.`
     );
 
 });
