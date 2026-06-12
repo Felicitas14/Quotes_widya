@@ -161,7 +161,7 @@ const externalShareBtn = document.querySelector('.action-btn.share-btn');
 const themeToggle = document.querySelector('.theme-toggle');
 
 // --- 3. PRELOADER HIDE ---
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     if (loader) {
         loader.style.opacity = '0';
         setTimeout(() => {
@@ -1043,6 +1043,15 @@ Dibuat dengan 💗 oleh Ferizz.`
     );
 
 });
+
+setTimeout(() => {
+    const loader =
+    document.getElementById('loader');
+
+    if(loader){
+        loader.style.display = 'none';
+    }
+}, 1000);
 
 // Initial Render
 renderQuote();
