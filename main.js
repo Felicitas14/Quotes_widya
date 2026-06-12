@@ -50,6 +50,7 @@ const DEFAULT_QUOTES = {
     ],
 
     Savage: [
+        { text: "Hidup adalah permainan maka jadilah pemain bukan mainan.", author: "Drean resink", emoji: "😮‍💨", likes: 1410},
         { text: "Pura-pura bodoh itu menyenangkan saat kita sedang menghadapi orang yang pura-pura pintar.", author: "Savage King", emoji: "😏", likes: 580 },
         { text: "If you treat me like an option, I'll leave you like a choice.", author: "Unknown", emoji: "🔥", likes: 492 },
         { text: "Kamu itu seperti koin, bermuka dua dan nilainya gak seberapa.", author: "Pedas Tapi Nyata", emoji: "🪙", likes: 712 },
@@ -65,7 +66,6 @@ const DEFAULT_QUOTES = {
         { text: "Jangan khawatir tentangku, khawatirlah tentang dirimu.", author: "Savage Queen", emoji: "🔥", likes: 650 },
         { text: "Aku tidak jahat, aku hanya tidak mudah dibohongi.", author: "Unknown", emoji: "🖤", likes: 538 },
         { text: "Kesuksesanku adalah balasan terbaik.", author: "Winner", emoji: "🏆", likes: 500 },
-        { text: "Hidup adalah permainan maka jadilah pemain bukan mainan.", author: "Drean resink", emoji: "😮‍💨", likes: 1410}
     ]
 };
 // State Variables
