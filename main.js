@@ -1041,7 +1041,7 @@ document
 QuoteSpace adalah tempat untuk menemukan, menyimpan, dan membagikan quote favoritmu. 
 Temukan kata-kata yang cocok dengan suasana hatimu setiap hari.
 
-Dibuat dengan  oleh Ferizz🥴`
+Dibuat oleh Ferizz🥴`
     );
 
 });
