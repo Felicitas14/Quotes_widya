@@ -425,7 +425,7 @@ function selectMood(mood) {
     document.body.classList.remove(
     "happy-bg",
     "sad-bg",
-    "savage-bg"
+    "savage-bg",
     "romantic-bg"
     );
     
