@@ -66,7 +66,129 @@ const DEFAULT_QUOTES = {
         { text: "Jangan khawatir tentangku, khawatirlah tentang dirimu.", author: "Savage Queen", emoji: "🔥", likes: 650 },
         { text: "Aku tidak jahat, aku hanya tidak mudah dibohongi.", author: "Unknown", emoji: "🖤", likes: 538 },
         { text: "Kesuksesanku adalah balasan terbaik.", author: "Winner", emoji: "🏆", likes: 500 },
-    ]
+    ],
+    Romantic: [
+    {
+        text: "Jika aku bisa memilih lagi, aku tetap memilih kamu.",
+        author: "Unknown",
+        emoji: "💖",
+        likes: 1200
+    },
+    {
+        text: "Rumah bukan tempat, rumah adalah kamu.",
+        author: "Unknown",
+        emoji: "🏡💕",
+        likes: 980
+    },
+    {
+        text: "Jatuh cinta padamu adalah hal favoritku.",
+        author: "Love",
+        emoji: "🥰",
+        likes: 870
+    },
+    {
+        text: "Aku tidak butuh seribu alasan untuk mencintaimu, cukup satu hati untuk memilihmu setiap hari.",
+        author: "Romantic Soul",
+        emoji: "🌹",
+        likes: 940
+    },
+    {
+        text: "Terima kasih telah hadir dan membuat dunia terasa lebih indah.",
+        author: "Unknown",
+        emoji: "💞",
+        likes: 760
+    },
+        {
+    text: "Aku menemukan bagian terbaik dari diriku saat bersamamu.",
+    author: "Unknown",
+    emoji: "❤️",
+    likes: 850
+    },
+    {
+        text: "Cinta bukan tentang menemukan seseorang yang sempurna, tetapi melihat seseorang dengan sempurna.",
+        author: "Love Story",
+        emoji: "💘",
+        likes: 910
+    },
+    {
+        text: "Namamu adalah notifikasi favoritku.",
+        author: "Unknown",
+        emoji: "📱💕",
+        likes: 1030
+    },
+    {
+        text: "Aku ingin menjadi alasan senyummu setiap hari.",
+        author: "Romantic Soul",
+        emoji: "😊💗",
+        likes: 890
+    },
+    {
+        text: "Di antara miliaran manusia, hatiku memilihmu.",
+        author: "Unknown",
+        emoji: "🌎❤️",
+        likes: 950
+    },
+    {
+        text: "Aku tidak tahu masa depan seperti apa, tapi aku berharap ada kamu di dalamnya.",
+        author: "Love",
+        emoji: "✨💞",
+        likes: 1100
+    },
+    {
+        text: "Setiap lagu cinta mengingatkanku padamu.",
+        author: "Unknown",
+        emoji: "🎵💕",
+        likes: 780
+    },
+    {
+        text: "Jika cinta adalah perjalanan, aku ingin berjalan bersamamu selamanya.",
+        author: "Dream Love",
+        emoji: "🚶‍♂️💖",
+        likes: 920
+    },
+    {
+        text: "Pelukmu adalah tempat ternyaman yang pernah kutemukan.",
+        author: "Unknown",
+        emoji: "🤗❤️",
+        likes: 1250
+    },
+    {
+        text: "Aku jatuh cinta padamu berkali-kali, setiap hari.",
+        author: "Romantic Soul",
+        emoji: "🥰",
+        likes: 1080
+    },
+    {
+        text: "Mungkin aku tidak sempurna, tapi cintaku untukmu selalu tulus.",
+        author: "Unknown",
+        emoji: "💗",
+        likes: 860
+    },
+    {
+        text: "Kamu adalah doa yang akhirnya dijawab oleh Tuhan.",
+        author: "Love Hope",
+        emoji: "🙏💞",
+        likes: 1350
+    },
+    {
+        text: "Aku suka semua hal tentangmu, bahkan hal-hal kecil yang tidak kamu sadari.",
+        author: "Unknown",
+        emoji: "🌷",
+        likes: 820
+    },
+    {
+        text: "Bersamamu, hari biasa terasa istimewa.",
+        author: "Love",
+        emoji: "✨❤️",
+        likes: 930
+    },
+    {
+        text: "Aku tidak mencari yang sempurna, aku hanya mencari kamu.",
+        author: "Unknown",
+        emoji: "💕",
+        likes: 1400
+    }
+]
 };
 // State Variables
 let currentMood = 'Happy';
