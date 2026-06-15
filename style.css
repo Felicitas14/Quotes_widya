@@ -529,6 +529,11 @@ body.dark-theme .theme-toggle {
 .mood-savage {
     background: linear-gradient(135deg, rgba(255, 100, 150, 0.5), rgba(255, 50, 100, 0.4));
 }
+.mood-romantic {
+
+    background:
+    rgba(255,105,180,0.4);
+}
 
 .mood-icon {
     font-size: 2.5rem;
