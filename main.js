@@ -540,7 +540,12 @@ function selectMood(mood) {
         
     // Update active class on nav or highlight
     if (highlightText) {
-        const moodEmojis = { Happy: 'Happy 😉', Sad: 'Sad 💔', Savage: 'Savage 🔥' };
+        const moodEmojis = {
+                            Happy: 'Happy 😉',
+                            Sad: 'Sad 💔',
+                            Savage: 'Savage 🔥',
+                            Romantic: 'Romantic 💖'
+                        };
         highlightText.textContent = moodEmojis[mood] || mood;
     }
 
@@ -744,7 +749,12 @@ if (uploadForm) {
             
             // Update the mood header highlight text
             if (highlightText) {
-                const moodEmojis = { Happy: 'Happy 😉', Sad: 'Sad 💔', Savage: 'Savage 🔥' };
+                const moodEmojis = {
+                                    Happy: 'Happy 😉',
+                                    Sad: 'Sad 💔',
+                                    Savage: 'Savage 🔥',
+                                    Romantic: 'Romantic 💖'
+                                };
                 highlightText.textContent = moodEmojis[mood] || mood;
             }
 
