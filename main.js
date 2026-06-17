@@ -102,8 +102,15 @@ let isAdmin = false;
 
 // Load from LocalStorage or initialize with defaults
 function initStorage() {
-    quotesDb = JSON.parse(JSON.stringify(DEFAULT_QUOTES));
-    localStorage.setItem('quotes_db', JSON.stringify(quotesDb));
+    // Quotes DB
+    const savedDb = localStorage.getItem('quotes_db');
+    
+    if (savedDb) {
+        quotesDb = JSON.parse(savedDb);
+    } else {
+        quotesDb = JSON.parse(JSON.stringify(DEFAULT_QUOTES));
+        localStorage.setItem('quotes_db', JSON.stringify(quotesDb));
+    }
 }
 
     // Likes
