@@ -102,14 +102,9 @@ let isAdmin = false;
 
 // Load from LocalStorage or initialize with defaults
 function initStorage() {
-    // Quotes DB
-    const savedDb = localStorage.getItem('quotes_db');
-    if (savedDb) {
-        quotesDb = JSON.parse(savedDb);
-    } else {
-        quotesDb = JSON.parse(JSON.stringify(DEFAULT_QUOTES)); // Deep copy
-        localStorage.setItem('quotes_db', JSON.stringify(quotesDb));
-    }
+    quotesDb = JSON.parse(JSON.stringify(DEFAULT_QUOTES));
+    localStorage.setItem('quotes_db', JSON.stringify(quotesDb));
+}
 
     // Likes
     const savedLikes = localStorage.getItem('liked_quotes');
