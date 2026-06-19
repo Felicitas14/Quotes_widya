@@ -871,22 +871,22 @@ Share
 
 </span>
 
-${quote.isUserQuote &&
-(
-    quote.ownerId === currentUserId ||
-    isAdmin
-)
-? `
-<span
-class="delete-btn"
-onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
-
-<i class="fas fa-trash"></i>
-Delete
-
-</span>
-`
-: ''
+${quote.isUserQuote && quote.ownerId === currentUserId
+  ? `
+    <span
+      class="edit-btn"
+      onclick='openEditModal(${JSON.stringify(quote.text)}, "${currentMood}")'>
+      <i class="fas fa-pen"></i>
+      Edit
+    </span>
+    <span
+      class="delete-btn"
+      onclick='deleteUserQuote(${JSON.stringify(quote.text)})'>
+      <i class="fas fa-trash"></i>
+      Delete
+    </span>
+  `
+  : ''
 }
 </div>
 
@@ -990,6 +990,131 @@ return;
 
 }
 
+// --- EDIT MODAL ELEMENTS ---
+const editModal           = document.getElementById('edit-modal');
+const btnCloseEdit        = document.getElementById('btn-close-edit-modal');
+const editForm            = document.getElementById('edit-form');
+const editQuoteTextarea   = document.getElementById('edit-quote-text');
+const editAuthorInput     = document.getElementById('edit-author-input');
+const editMoodSelect      = document.getElementById('edit-mood-select');
+const editEmojiInput      = document.getElementById('edit-emoji-input');
+const emojiPreview        = document.getElementById('emoji-preview');
+const editOrigText        = document.getElementById('edit-quote-original-text');
+const editOrigMood        = document.getElementById('edit-quote-original-mood');
+
+// --- BUKA EDIT MODAL ---
+function openEditModal(text, mood) {
+    const quote = quotesDb[mood]?.find(q => q.text === text);
+    if (!quote) return;
+
+    // Hanya pemilik yang bisa edit
+    if (quote.ownerId !== currentUserId) {
+        showToast('Kamu tidak bisa mengedit quote ini 🚫');
+        return;
+    }
+
+    // Isi semua field dengan data quote saat ini
+    editQuoteTextarea.value      = quote.text;
+    editAuthorInput.value        = quote.author;
+    editMoodSelect.value         = mood;
+    editEmojiInput.value         = quote.emoji || '✨';
+    emojiPreview.textContent     = quote.emoji || '✨';
+    editOrigText.value           = quote.text;   // key pencarian (teks asli)
+    editOrigMood.value           = mood;          // mood asli
+
+    editModal.classList.remove('hidden');
+}
+
+window.openEditModal = openEditModal;
+
+// --- TUTUP EDIT MODAL ---
+function closeEditModal() {
+    editModal?.classList.add('hidden');
+}
+
+btnCloseEdit?.addEventListener('click', closeEditModal);
+editModal?.addEventListener('click', (e) => {
+    if (e.target === editModal) closeEditModal();
+});
+
+// --- LIVE PREVIEW EMOJI ---
+editEmojiInput?.addEventListener('input', () => {
+    const val = editEmojiInput.value.trim();
+    emojiPreview.textContent = val || '✨';
+});
+
+// --- SIMPAN PERUBAHAN ---
+editForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const originalText  = editOrigText.value;
+    const originalMood  = editOrigMood.value;
+    const newText       = editQuoteTextarea.value.trim();
+    const newAuthor     = editAuthorInput.value.trim();
+    const newMood       = editMoodSelect.value;
+    const newEmoji      = editEmojiInput.value.trim() || '✨';
+
+    if (!newText || !newAuthor || !newMood) {
+        showToast('Semua field harus diisi ya 🥺');
+        return;
+    }
+
+    // Temukan quote di mood aslinya
+    const idx = quotesDb[originalMood]?.findIndex(q => q.text === originalText);
+    if (idx === -1 || idx === undefined) {
+        showToast('Quote tidak ditemukan 😢');
+        return;
+    }
+
+    const quote = quotesDb[originalMood][idx];
+
+    // Double-check kepemilikan
+    if (quote.ownerId !== currentUserId) {
+        showToast('Kamu tidak bisa mengedit quote ini 🚫');
+        return;
+    }
+
+    // Ambil data lama yang perlu dipertahankan
+    const updatedQuote = {
+        ...quote,
+        text:   newText,
+        author: newAuthor,
+        emoji:  newEmoji,
+    };
+
+    // Hapus dari mood lama
+    quotesDb[originalMood].splice(idx, 1);
+
+    // Kalau mood berubah, pindah ke mood baru
+    // Kalau sama, tetap di mood yang sama (prepend biar terlihat)
+    if (!quotesDb[newMood]) quotesDb[newMood] = [];
+    quotesDb[newMood].unshift(updatedQuote);
+
+    // Simpan ke localStorage
+    localStorage.setItem('quotes_db', JSON.stringify(quotesDb));
+
+    // Kalau mood berubah, update currentMood & highlight
+    if (newMood !== originalMood) {
+        currentMood = newMood;
+        if (highlightText) {
+            const moodEmojis = {
+                Happy:    'Happy 😉',
+                Sad:      'Sad 💔',
+                Savage:   'Savage 🔥',
+                Romantic: 'Romantic 💖'
+            };
+            highlightText.textContent = moodEmojis[newMood] || newMood;
+        }
+    }
+
+    currentQuoteIndex = 0;
+    closeEditModal();
+    renderQuote();
+    renderTopQuotes();
+
+    showToast('Quote berhasil diperbarui! ✨');
+});
+    
 const confirmDelete =
 confirm(
 'Hapus quote ini?'
