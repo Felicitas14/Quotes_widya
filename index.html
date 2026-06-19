@@ -179,6 +179,60 @@
         </div>
     </div>
 
+<!-- Modal: Edit Quote Milik Sendiri -->
+<div id="edit-modal" class="modal-overlay hidden">
+    <div class="modal-content glass-card">
+        <button id="btn-close-edit-modal" class="close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 class="modal-title">Edit Quote Kamu ✏️</h2>
+        <p class="modal-subtitle">Ubah teks, nama, mood, atau emoji quote milikmu.</p>
+
+        <form id="edit-form">
+            <!-- Field quote text (bisa diubah) -->
+            <div class="input-group">
+                <textarea id="edit-quote-text" rows="4" placeholder="Tulis quote kamu..." required></textarea>
+            </div>
+
+            <!-- Field nama / author -->
+            <div class="input-group">
+                <input type="text" id="edit-author-input" placeholder="Nama kamu..." required>
+            </div>
+
+            <!-- Field mood -->
+            <div class="input-group">
+                <select id="edit-mood-select" required>
+                    <option value="" disabled>Pilih Kategori Mood...</option>
+                    <option value="Happy">Happy 😊</option>
+                    <option value="Sad">Sad 💔</option>
+                    <option value="Savage">Savage 😏</option>
+                    <option value="Romantic">Romantic 💖</option>
+                </select>
+            </div>
+
+            <!-- Field emoji -->
+            <div class="input-group edit-emoji-group">
+                <label class="edit-emoji-label">Emoji di atas card</label>
+                <div class="edit-emoji-row">
+                    <input type="text" id="edit-emoji-input"
+                        placeholder="Ketik emoji, contoh: 💖"
+                        maxlength="8"
+                        class="edit-emoji-input">
+                    <div class="emoji-preview" id="emoji-preview">💖</div>
+                </div>
+                <small class="edit-hint">✨ Kamu bisa ketik atau paste emoji apapun.</small>
+            </div>
+
+            <!-- Hidden field untuk menyimpan teks quote asli sebagai key pencarian -->
+            <input type="hidden" id="edit-quote-original-text">
+            <!-- Hidden field untuk menyimpan mood quote asli -->
+            <input type="hidden" id="edit-quote-original-mood">
+
+            <button type="submit" class="btn-primary w-100">Simpan Perubahan 💗</button>
+        </form>
+    </div>
+</div>
+
     <script src="main.js"></script>
 
 </body>
