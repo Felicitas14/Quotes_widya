@@ -773,5 +773,3 @@ document.getElementById("nav-about")?.addEventListener("click", (e) => {
 document.body.classList.add("happy-bg");
 renderQuote();
 renderTopQuotes();
-ENDOFFILE
-ech0 "done"
